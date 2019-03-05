@@ -3,9 +3,11 @@
 ###
 spring:
   datasource:
+    #url: jdbc:h2:file:C:/Project/db/try_spr_hib;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    # подключение во время транзакции
     url: jdbc:h2:file:C:/Project/db/try_spr_hib;MVCC=FALSE;MV_STORE=FALSE;LOCK_MODE=0;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    #url: jdbc:h2:file:C:/Project/db/try_spr_hib;MVCC=FALSE;MV_STORE=FALSE;LOCK_MODE=0;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    #url: jdbc:h2:mem:mydatabase;MVCC=FALSE;MV_STORE=FALSE;LOCK_MODE=0
+    # подключение к БД в памяти
+    #url: jdbc:h2:mem:mydatabase
     platform: h2
     username: sa
     password:
@@ -13,8 +15,8 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      #ddl-auto: update
-      ddl-auto: create-drop
+      ddl-auto: update
+      #ddl-auto: create-drop
     properties:
       hibernate:
         show_sql: true
