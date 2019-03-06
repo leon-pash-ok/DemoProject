@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "ADRESS")
-public class AdressEntity {
+public class AddressEntity {
     @Id
     @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,7 +36,7 @@ public class AdressEntity {
     @Column(name = "PHONE")
     private String phone;
 
-    public AdressEntity(String city, String street, String building, Integer apartment, String phone) {
+    public AddressEntity(String city, String street, String building, Integer apartment, String phone) {
         this.city = city;
         this.street = street;
         this.building = building;
@@ -44,7 +44,7 @@ public class AdressEntity {
         this.phone = phone;
     }
 
-    public AdressEntity(String city, String street, String building, String phone) {
+    public AddressEntity(String city, String street, String building, String phone) {
         this(city, street, building, null, phone);
     }
 }

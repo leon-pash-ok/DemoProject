@@ -33,7 +33,8 @@ public class EmployeeEntity {
     @Column(name = "EXPERIENCE", nullable = false, length = 512)
     private Integer experience;
 
-    public EmployeeEntity(String firstName, String secondName, String position, Integer experience) {
+    public EmployeeEntity(Long id, String firstName, String secondName, String position, Integer experience) {
+        this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.position = position;

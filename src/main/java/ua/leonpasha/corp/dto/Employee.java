@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
-    private Long id;
+public class Employee {
+    private Long employeeId;
     private String firstName;
     private String secondName;
+    private String position;
+    private Integer experience;
 }

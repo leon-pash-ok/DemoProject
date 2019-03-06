@@ -9,8 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
-    private Long id;
-    private String firstName;
-    private String secondName;
+public class Address {
+    private Long addressId;
+    private String city;
+    private String street;
+    private String building;
+    private Integer apartment;
+    private String phone;
 }

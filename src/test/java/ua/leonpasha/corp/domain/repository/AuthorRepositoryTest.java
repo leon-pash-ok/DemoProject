@@ -17,11 +17,12 @@ import ua.leonpasha.corp.domain.entities.AuthorEntity;
 import ua.leonpasha.corp.dto.Author;
 import ua.leonpasha.corp.service.converter.MapperUtilsForEntities;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-//@Transactional
-//@Commit
+/*@Transactional
+@Commit*/
 public class AuthorRepositoryTest {
 
     /*@PersistenceContext
@@ -50,7 +51,7 @@ public class AuthorRepositoryTest {
     @Test
     public void whenFindByName_thenReturnAuthor2() {
         // given
-        Author alex = Author.builder().firstName("alex2").secondName("some2").build();
+        Author alex = Author.builder().firstName("alex3").secondName("some2").build();
         AuthorEntity entity = MapperUtilsForEntities.mapToEntityAuthor(alex);
         authorRepository.save(entity);
         authorRepository.flush();
@@ -60,6 +61,6 @@ public class AuthorRepositoryTest {
 
         // then
         Assertions.assertThat(authorEntities).isNotNull().isNotEmpty();
-        //assertEquals(1, authorEntities.size());
+        assertTrue(authorEntities.size() >= 1);
     }
 }
