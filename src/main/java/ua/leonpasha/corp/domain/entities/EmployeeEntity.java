@@ -1,10 +1,14 @@
 package ua.leonpasha.corp.domain.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,12 +37,17 @@ public class EmployeeEntity {
     @Column(name = "EXPERIENCE", nullable = false, length = 512)
     private Integer experience;
 
-    public EmployeeEntity(Long id, String firstName, String secondName, String position, Integer experience) {
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "ADDRESS_ID")
+    private AddressEntity address;
+
+    public EmployeeEntity(Long id, String firstName, String secondName, String position, Integer experience, AddressEntity address) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.position = position;
         this.experience = experience;
+        this.address = address;
     }
 
 }

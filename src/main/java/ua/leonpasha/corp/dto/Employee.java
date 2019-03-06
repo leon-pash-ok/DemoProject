@@ -15,4 +15,5 @@ public class Employee {
     private String secondName;
     private String position;
     private Integer experience;
+    private Address address;
 }

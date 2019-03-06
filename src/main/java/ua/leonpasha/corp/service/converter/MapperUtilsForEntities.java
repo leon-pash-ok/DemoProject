@@ -39,7 +39,8 @@ public class MapperUtilsForEntities {
                 employee.getFirstName(),
                 employee.getSecondName(),
                 employee.getPosition(),
-                employee.getExperience()
+                employee.getExperience(),
+                mapToEntityAddress(employee.getAddress())
         );
     }
 
@@ -52,5 +53,16 @@ public class MapperUtilsForEntities {
                 .apartment(addressEntity.getApartment())
                 .build();
 
+    }
+
+    public static AddressEntity mapToEntityAddress(Address address){
+        return new AddressEntity(
+                address.getAddressId(),
+                address.getCity(),
+                address.getStreet(),
+                address.getBuilding(),
+                address.getApartment(),
+                address.getPhone()
+        );
     }
 }

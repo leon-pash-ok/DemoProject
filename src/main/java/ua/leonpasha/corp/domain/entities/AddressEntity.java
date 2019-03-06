@@ -36,7 +36,8 @@ public class AddressEntity {
     @Column(name = "PHONE")
     private String phone;
 
-    public AddressEntity(String city, String street, String building, Integer apartment, String phone) {
+    public AddressEntity(Long id, String city, String street, String building, Integer apartment, String phone) {
+        this.id = id;
         this.city = city;
         this.street = street;
         this.building = building;
@@ -44,7 +45,7 @@ public class AddressEntity {
         this.phone = phone;
     }
 
-    public AddressEntity(String city, String street, String building, String phone) {
-        this(city, street, building, null, phone);
+    public AddressEntity(Long id, String city, String street, String building, String phone) {
+        this(id, city, street, building, null, phone);
     }
 }
