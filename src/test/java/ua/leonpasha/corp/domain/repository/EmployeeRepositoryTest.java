@@ -1,27 +1,30 @@
 package ua.leonpasha.corp.domain.repository;
 
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringRunner;
 import ua.leonpasha.corp.Application;
 import ua.leonpasha.corp.domain.entities.EmployeeEntity;
+import ua.leonpasha.corp.domain.repository.EmployeeRepository;
 import ua.leonpasha.corp.dto.Address;
 import ua.leonpasha.corp.dto.Employee;
 import ua.leonpasha.corp.service.converter.MapperUtilsForEntities;
 
-import static org.junit.Assert.assertTrue;
 
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class EmployeeRepositoryTest {
+
     @Autowired
     private EmployeeRepository employeeRepository;
-    @Autowired
-    private AddressRepository addressRepository;
 
     @Test
     public void whenFindByName_thenReturnEmployee() {
@@ -43,7 +46,9 @@ public class EmployeeRepositoryTest {
 
         // then
         Assertions.assertThat(authorEntities).isNotNull().isNotEmpty();
-        assertTrue(authorEntities.size() >= 1);
-        assertTrue(authorEntities.get(0).getAddress().getId() >= 1);
+        Assert.assertTrue(authorEntities.size() >= 1);
+        Long addressId = authorEntities.get(0).getAddress().getId();
+        log.info("addressId = {}", addressId);
+        Assert.assertTrue(addressId >= 1);
     }
 }
