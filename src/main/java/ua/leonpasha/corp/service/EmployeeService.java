@@ -24,14 +24,14 @@ public class EmployeeService {
         EmployeeEntity employeeEntity = MapperUtilsForEntities.mapToEntityEmployee(employee);
 
         EmployeeEntity resEntity = employeeRepository.saveAndFlush(employeeEntity);
+        log.info("resEntity: {}", resEntity);
         return MapperUtilsForEntities.mapToDtoEmployee(resEntity);
     }
 
 
     @Transactional(isolation = Isolation.READ_COMMITTED, readOnly = true)
-    public List<Employee> findAllEmployees() {
+    public List<Employee> findAll() {
         log.info("call findAllEmployees with params.");
-        //EmployeeEntity employeeEntity = MapperUtilsForEntities.mapToEntityEmployee(employee);
 
         List<EmployeeEntity> resEntities = employeeRepository.findAll();
         return resEntities.stream()

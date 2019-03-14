@@ -1,14 +1,16 @@
 package ua.leonpasha.corp.service.converter;
 
+import javax.annotation.Nonnull;
 import ua.leonpasha.corp.domain.entities.AddressEntity;
+import ua.leonpasha.corp.domain.entities.AuthorEntity;
 import ua.leonpasha.corp.domain.entities.EmployeeEntity;
 import ua.leonpasha.corp.dto.Address;
 import ua.leonpasha.corp.dto.Author;
-import ua.leonpasha.corp.domain.entities.AuthorEntity;
 import ua.leonpasha.corp.dto.Employee;
 
 public class MapperUtilsForEntities {
-    public static Author mapToDtoAuthor(AuthorEntity authorEntity){
+    @Nonnull
+    public static Author mapToDtoAuthor(@Nonnull AuthorEntity authorEntity){
         return Author.builder()
                 .id(authorEntity.getId())
                 .firstName(authorEntity.getFirstName())
@@ -17,23 +19,27 @@ public class MapperUtilsForEntities {
 
     }
 
-    public static AuthorEntity mapToEntityAuthor(Author author){
+    @Nonnull
+    public static AuthorEntity mapToEntityAuthor(@Nonnull Author author){
         return new AuthorEntity(author.getFirstName(), author.getSecondName());
 
     }
 
-    public static Employee mapToDtoEmployee(EmployeeEntity employeeEntity){
+    @Nonnull
+    public static Employee mapToDtoEmployee(@Nonnull EmployeeEntity employeeEntity){
         return Employee.builder()
                 .employeeId(employeeEntity.getId())
                 .firstName(employeeEntity.getFirstName())
                 .secondName(employeeEntity.getSecondName())
                 .position(employeeEntity.getPosition())
                 .experience(employeeEntity.getExperience())
+                .address(mapToDtoAddress(employeeEntity.getAddress()))
                 .build();
 
     }
 
-    public static EmployeeEntity mapToEntityEmployee(Employee employee){
+    @Nonnull
+    public static EmployeeEntity mapToEntityEmployee(@Nonnull Employee employee){
         return new EmployeeEntity(
                 employee.getEmployeeId(),
                 employee.getFirstName(),
@@ -44,7 +50,8 @@ public class MapperUtilsForEntities {
         );
     }
 
-    public static Address mapToDtoAddress(AddressEntity addressEntity){
+    @Nonnull
+    private static Address mapToDtoAddress(@Nonnull AddressEntity addressEntity){
         return Address.builder()
                 .addressId(addressEntity.getId())
                 .city(addressEntity.getCity())
@@ -55,7 +62,8 @@ public class MapperUtilsForEntities {
 
     }
 
-    public static AddressEntity mapToEntityAddress(Address address){
+    @Nonnull
+    public static AddressEntity mapToEntityAddress(@Nonnull Address address){
         return new AddressEntity(
                 address.getAddressId(),
                 address.getCity(),
