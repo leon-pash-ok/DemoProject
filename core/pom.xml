@@ -17,11 +17,12 @@
         <com.google.code.findbugs.version>3.0.2</com.google.code.findbugs.version>
     </properties>
 
-<!--    <parent>
+  <!--  <parent>
         <groupId>ua.leonpasha.corp</groupId>
         <artifactId>DemoProject</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>-->
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
