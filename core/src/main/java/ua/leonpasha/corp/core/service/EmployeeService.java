@@ -1,4 +1,4 @@
-package ua.leonpasha.corp.service;
+package ua.leonpasha.corp.core.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,10 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ua.leonpasha.corp.domain.entities.EmployeeEntity;
-import ua.leonpasha.corp.domain.repository.EmployeeRepository;
-import ua.leonpasha.corp.dto.Employee;
-import ua.leonpasha.corp.service.converter.MapperUtilsForEntities;
+import ua.leonpasha.corp.core.domain.entities.EmployeeEntity;
+import ua.leonpasha.corp.core.domain.repository.EmployeeRepository;
+import ua.leonpasha.corp.api.dto.Employee;
+import ua.leonpasha.corp.core.service.converter.MapperUtilsForEntities;
 
 @Slf4j
 @Service

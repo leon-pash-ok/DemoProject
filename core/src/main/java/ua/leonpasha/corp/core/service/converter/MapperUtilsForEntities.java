@@ -1,12 +1,12 @@
-package ua.leonpasha.corp.service.converter;
+package ua.leonpasha.corp.core.service.converter;
 
 import javax.annotation.Nonnull;
-import ua.leonpasha.corp.domain.entities.AddressEntity;
-import ua.leonpasha.corp.domain.entities.AuthorEntity;
-import ua.leonpasha.corp.domain.entities.EmployeeEntity;
-import ua.leonpasha.corp.dto.Address;
-import ua.leonpasha.corp.dto.Author;
-import ua.leonpasha.corp.dto.Employee;
+import ua.leonpasha.corp.api.dto.Address;
+import ua.leonpasha.corp.api.dto.Author;
+import ua.leonpasha.corp.api.dto.Employee;
+import ua.leonpasha.corp.core.domain.entities.AddressEntity;
+import ua.leonpasha.corp.core.domain.entities.AuthorEntity;
+import ua.leonpasha.corp.core.domain.entities.EmployeeEntity;
 
 public class MapperUtilsForEntities {
     @Nonnull

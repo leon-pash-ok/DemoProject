@@ -1,4 +1,11 @@
-.idea/
+# Idea files.
+.idea/**
+*.iml
+
+# Compiled class file.
 target/
-DemoProject.iml
+*.class
+
+# Log file.
+*.log
 logs/
