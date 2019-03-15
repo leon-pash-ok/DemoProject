@@ -7,6 +7,14 @@
     <groupId>ua.leonpasha.corp</groupId>
     <artifactId>api</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>ua.leonpasha.corp</groupId>
+        <artifactId>DemoProject</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
 
     <name>api</name>
 
@@ -16,14 +24,9 @@
 
     <dependencies>
         <!-- Lombok -->
-<!--        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
         </dependency>
     </dependencies>
 
