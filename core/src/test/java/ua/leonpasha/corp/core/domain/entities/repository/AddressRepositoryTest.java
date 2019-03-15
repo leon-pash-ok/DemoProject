@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import ua.leonpasha.corp.api.dto.Address;
 import ua.leonpasha.corp.core.Application;
 import ua.leonpasha.corp.core.domain.entities.AddressEntity;
-import ua.leonpasha.corp.api.dto.Address;
 import ua.leonpasha.corp.core.domain.repository.AddressRepository;
 import ua.leonpasha.corp.core.service.converter.MapperUtilsForEntities;
 
@@ -40,6 +40,6 @@ public class AddressRepositoryTest {
 
         // then
         Assertions.assertThat(addressEntities).isNotNull().isNotEmpty();
-        assertTrue( addressEntities.size() >= 1);
+        assertTrue(addressEntities.size() >= 1);
     }
 }
